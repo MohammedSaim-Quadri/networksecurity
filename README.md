@@ -1,4 +1,4 @@
-# Network Security for project for Phishing Dataset
+# Network Security project for Phishing Dataset
 
 ## Project Description
 
