@@ -2,7 +2,7 @@
 
 ## Overview
 
-Section 49 is a full-scale MLOps project that implements an end-to-end machine learning pipeline for network security applications. The project covers the complete ML lifecycle, including data ingestion, preprocessing, model training, evaluation, deployment, and continuous monitoring using cloud platforms like AWS.
+This is a full-scale MLOps project that implements an end-to-end machine learning pipeline for network security applications. The project covers the complete ML lifecycle, including data ingestion, preprocessing, model training, evaluation, deployment, and continuous monitoring using cloud platforms like AWS.
 
 ### Features
 - Automated Data Ingestion from structured network datasets\
