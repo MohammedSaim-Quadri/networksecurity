@@ -1,0 +1,38 @@
+[ 2025-03-30 13:48:27,450 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-03-30 13:48:27,484 ] 107 dagshub - INFO - Accessing as mohammedsaimquadri
+[ 2025-03-30 13:48:28,028 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mohammedsaimquadri/networksecurity "HTTP/1.1 200 OK"
+[ 2025-03-30 13:48:28,523 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-03-30 13:48:28,526 ] 107 dagshub - INFO - Initialized MLflow to track repo "mohammedsaimquadri/networksecurity"
+[ 2025-03-30 13:48:28,552 ] 107 dagshub - INFO - Repository mohammedsaimquadri/networksecurity initialized!
+[ 2025-03-30 13:49:54,905 ] 78 root - INFO - Starting Training pipeline.
+[ 2025-03-30 13:49:54,906 ] 35 root - INFO - Start data ingestion.
+[ 2025-03-30 13:50:05,320 ] 65 root - INFO - performed train test split on the dataframe
+[ 2025-03-30 13:50:05,320 ] 66 root - INFO - Exited split_train_test method of Data Ingestion class
+[ 2025-03-30 13:50:05,321 ] 70 root - INFO - Exporting train and test file path.
+[ 2025-03-30 13:50:05,475 ] 75 root - INFO - Exported train and test file path.
+[ 2025-03-30 13:50:05,475 ] 38 root - INFO - Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\train.csv', test_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\test.csv') created
+[ 2025-03-30 13:50:05,511 ] 47 root - INFO - Initiate the data validation
+[ 2025-03-30 13:50:05,601 ] 34 root - INFO - Required number of columns:2
+[ 2025-03-30 13:50:05,601 ] 35 root - INFO - Dataframe has columns=31
+[ 2025-03-30 13:50:05,602 ] 34 root - INFO - Required number of columns:2
+[ 2025-03-30 13:50:05,602 ] 35 root - INFO - Dataframe has columns=31
+[ 2025-03-30 13:50:05,919 ] 49 root - INFO - Data Validation complete and artifact: DataValidationArtifact(validation_status=None, valid_train_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\train.csv', valid_test_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifacts\\03_30_2025_13_47_49\\data_validation\\drift_report\\report.yaml') created
+[ 2025-03-30 13:50:05,919 ] 58 root - INFO - Initiate data transformation
+[ 2025-03-30 13:50:05,919 ] 57 root - INFO - Entered initiate data transformation method of DataTransformation class
+[ 2025-03-30 13:50:05,919 ] 59 root - INFO - starting data transformation
+[ 2025-03-30 13:59:06,943 ] 78 root - INFO - Starting Training pipeline.
+[ 2025-03-30 13:59:06,943 ] 35 root - INFO - Start data ingestion.
+[ 2025-03-30 13:59:16,525 ] 65 root - INFO - performed train test split on the dataframe
+[ 2025-03-30 13:59:16,525 ] 66 root - INFO - Exited split_train_test method of Data Ingestion class
+[ 2025-03-30 13:59:16,526 ] 70 root - INFO - Exporting train and test file path.
+[ 2025-03-30 13:59:16,610 ] 75 root - INFO - Exported train and test file path.
+[ 2025-03-30 13:59:16,610 ] 38 root - INFO - Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\train.csv', test_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\test.csv') created
+[ 2025-03-30 13:59:16,619 ] 47 root - INFO - Initiate the data validation
+[ 2025-03-30 13:59:16,704 ] 34 root - INFO - Required number of columns:2
+[ 2025-03-30 13:59:16,704 ] 35 root - INFO - Dataframe has columns=31
+[ 2025-03-30 13:59:16,704 ] 34 root - INFO - Required number of columns:2
+[ 2025-03-30 13:59:16,704 ] 35 root - INFO - Dataframe has columns=31
+[ 2025-03-30 13:59:16,930 ] 49 root - INFO - Data Validation complete and artifact: DataValidationArtifact(validation_status=None, valid_train_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\train.csv', valid_test_file_path='artifacts\\03_30_2025_13_47_49\\data_ingestion\\ingested\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifacts\\03_30_2025_13_47_49\\data_validation\\drift_report\\report.yaml') created
+[ 2025-03-30 13:59:16,930 ] 58 root - INFO - Initiate data transformation
+[ 2025-03-30 13:59:16,930 ] 57 root - INFO - Entered initiate data transformation method of DataTransformation class
+[ 2025-03-30 13:59:16,930 ] 59 root - INFO - starting data transformation
