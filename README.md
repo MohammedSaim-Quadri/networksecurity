@@ -1,109 +1,139 @@
 # Network Security project for Phishing Dataset
 
-## Project Description
-
-This project is a network security project for the Phishing Dataset.
-
-## Project Structure
-
-- `networksecurity/`: Contains the main project code.
-- `networksecurity/logging/`: Contains the logging code.
-- `networksecurity/pipeline/`: Contains the pipeline code.
-- `networksecurity/utils/`: Contains the utility code.
-- `networksecurity/components/`: Contains the components code.
-- `networksecurity/cloud/`: Contains information about the cloud environment.
-- `networksecurity/constants/`: Contains the constants.
-- `networksecurity/entities/`: Contains the entities.
-- `networksecurity/exception/`: Contains the exception code.
-# Section 49 - End-to-End MLOps Project
-
 ## Overview
-This is a comprehensive MLOps project that covers the entire machine learning lifecycle, from data collection and preprocessing to deploying a model and managing it in production. The goal of this project is to demonstrate setting up a robust MLOps pipeline that ensures seamless integration, deployment, and monitoring of machine learning models.
 
-## Project Stages
+Section 49 is a full-scale MLOps project that implements an end-to-end machine learning pipeline for network security applications. The project covers the complete ML lifecycle, including data ingestion, preprocessing, model training, evaluation, deployment, and continuous monitoring using cloud platforms like AWS.
 
-### 1. Data Collection and Preprocessing
-- Gather and clean the dataset for training.
-- Perform necessary transformations, including:
-  - Handling missing values
-  - Scaling numerical features
-  - Encoding categorical variables
-  
-### 2. Model Development
-- Develop and train a machine learning model using algorithms such as:
-  - Decision Trees
-  - Random Forest
-  - XGBoost
-  - Deep Learning models (if applicable)
-- Optimize the model through hyperparameter tuning.
+### Features
+- Automated Data Ingestion from structured network datasets\
+- Data Preprocessing & Validation using defined schemas
+- Model Training & Evaluation using state-of-the-art ML algorithms
+- Cloud Integration with AWS S3 for model storage and retrieval
+- CI/CD Pipeline for continuous integration and deployment
+- Dockerization for seamless deployment
+- Batch Prediction Pipeline for inference on new data
+- Logging & Exception Handling for debugging and monitoring
 
-### 3. Model Evaluation
-- Assess model performance using appropriate metrics, such as:
-  - Accuracy
-  - Precision
-  - Recall
-  - F1-score
-- Fine-tune the model based on evaluation results.
+### Project Structure
+```bash
+├── mohammedsaim-quadri-networksecurity/
+│   ├── README.md                # Project Documentation
+│   ├── app.py                   # Main Application Entry Point
+│   ├── Dockerfile               # Docker Configuration for Deployment
+│   ├── main.py                  # Training Pipeline Execution
+│   ├── push_data.py             # Data Pusher for Cloud Storage
+│   ├── requirements.txt         # Dependencies
+│   ├── setup.py                 # Package Setup
+│   ├── test_mongo.py            # MongoDB Connectivity Testing
+│   ├── data_schema/
+│   │   └── schema.yaml          # Data Schema Definitions
+│   ├── final_models/            # Trained Models
+│   │   ├── model.pkl            # Final ML Model
+│   │   └── preprocessor.pkl     # Data Preprocessing Pipeline
+│   ├── Network_Data/            # Raw Network Datasets
+│   │   └── phisingData.csv
+│   ├── networksecurity/         # Core Codebase
+│   │   ├── cloud/               # AWS S3 Integration
+│   │   ├── components/          # ML Pipeline Components
+│   │   ├── constant/            # Constants & Configs
+│   │   ├── entity/              # Entity Definitions
+│   │   ├── exception/           # Custom Exception Handling
+│   │   ├── logging/             # Logging Mechanisms
+│   │   ├── pipeline/            # Training & Prediction Pipelines
+│   │   └── utils/               # Utility Functions
+│   ├── templates/
+│   │   └── table.html           # UI Component
+│   ├── valid_data/
+│   │   └── test.csv             # Validated Test Data
+│   └── .github/workflows/
+│       └── main.yml             # GitHub Actions Workflow
+```
 
-### 4. Model Deployment
-- Deploy the trained model to a cloud platform (AWS, GCP, or Azure) to enable real-time or batch predictions.
-- Utilize AWS S3 for storing:
-  - Preprocessed data
-  - Model weights
-  - Other artifacts for future inference or retraining
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#bbdefb', 'edgeLabelBackground':'#ffffff'}}}%%
 
-### 5. MLOps: Model Monitoring and CI/CD
-- Implement monitoring mechanisms to track model performance in production.
-- Automate model deployment using Continuous Integration/Continuous Deployment (CI/CD) pipelines.
-- Ensure scalability and maintain model accuracy over time.
+graph TD;
+    
+    %% Data Pipeline %%
+    A(["🗄️ Data Collection"]) -->|Ingest Data| B(["📥 Data Ingestion"])
+    B -->|Validate Data| C(["✅ Data Validation"])
+    C -->|Transform Data| D(["🔄 Data Transformation"])
+    D -->|Train Model| E(["🤖 Model Training"])
+    E -->|Evaluate Model| F(["📊 Model Evaluation"])
+    F -->|Store Model| G(["📁 Model Registry (S3)"])
 
-## Input and Output
-### Input:
-- The dataset used for training the machine learning model (e.g., customer data, sales data, etc.).
+    %% Deployment %%
+    G -->|Deploy Model| H(["🚀 Model Deployment"])
+    H -->|Serve Predictions| I(["🌍 Web Service (Flask API)"])
+    I -->|User Requests| J(["🖥️ Frontend/Table UI"])
 
-### Output:
-- **Trained Model:** A deployable machine learning model.
-- **Model Artifacts:** Saved preprocessed data, model weights, and hyperparameters stored in AWS S3.
-- **Predictions:** The model’s inference results on unseen data.
+    %% MLOps & Monitoring %%
+    G -->|Monitor Model| K(["📡 Model Monitoring"])
+    K -->|Trigger Retraining| D
 
-## Goal of the Project
-By completing this project, you will gain practical experience in:
-- Setting up a scalable and automated MLOps pipeline.
-- Handling real-world challenges in machine learning deployment.
-- Leveraging cloud services for model storage and inference.
-- Monitoring and maintaining model performance post-deployment.
+    %% Subgraphs for Organization %%
+    subgraph "🔧 MLOps Pipeline"
+      B
+      C
+      D
+      E
+      F
+      G
+      H
+      K
+    end
 
-## Technologies Used
-- **Machine Learning Frameworks:** Scikit-learn
-- **Cloud Services:** AWS S3, AWS EC2, AWS ECR
-- **CI/CD Tools:** GitHub Actions
-- **Data Processing:** Pandas, NumPy
-- **Deployment Tools:** FastAPI, Docker
+    subgraph "☁️ Cloud Storage"
+      L(["🗂️ AWS S3"])
+      G --> L
+      H --> L
+    end
 
-## How to Run the Project
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/section49-mlops.git
-   cd section49-mlops
-   ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run data preprocessing:
-   ```sh
-   python scripts/preprocess.py
-   ```
-4. Train the model:
-   ```sh
-   python scripts/train.py
-   ```
-5. Deploy the model:
-   ```sh
-   python scripts/deploy.py
-   ```
+    subgraph "🛠️ CI/CD Pipeline"
+      M(["⚙️ GitHub Actions"])
+      M -->|Automate Deployment| H
+    end
+```
+## Installation & Setup
+
+### Prerequisites
+- Python 3.8+
+- Docker
+- AWS Account & CLI Setup
+- GitHub Actions for CI/CD
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### Run Model Training
+```bash
+python main.py
+```
+### Run Application Locally
+```bash
+python app.py
+```
+### Build & Run Docker Container
+```bash
+docker build -t networksecurity-app .
+docker run -p 5000:5000 networksecurity-app
+```
+## CI/CD & Deployment
+
+### GitHub Actions Workflow (.github/workflows/main.yml)
+
+This project implements Continuous Integration (CI) and Continuous Deployment (CD) using GitHub Actions:
+- Linting & Unit Testing
+- Building and Pushing Docker Image to AWS ECR
+- Deploying Model & Application
+
+### AWS Integration
+- S3 Bucket: Stores model artifacts
+- ECR: Stores containerized app
 
 ## Future Improvements
-- Implement advanced model explainability features.
-- Add model retraining workflows based on real-time data drift detection.
-- Optimize deployment using serverless architectures.
+- Implement Model Drift Detection
+- Integrate Live Monitoring with Prometheus/Grafana
+- Enable AutoML for Hyperparameter Tuning
+- Expand to Real-time Threat Detection
