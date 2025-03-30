@@ -49,10 +49,12 @@ jobs:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
             ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
             IMAGE_TAG: latest
-          run:
-            # Build a docker container and
-            # push it to ECR so that it can
-            # be deployed to ECS
-            docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          run: |
+            # Build a docker Image
+            docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+
+            # push it to ECR
             docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+            # deploy it to ECS.
             echo "::set -output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
